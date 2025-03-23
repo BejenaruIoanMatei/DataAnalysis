@@ -1,5 +1,5 @@
 # DataAnalysis
-Repository dedicat învățării și aprofundării conceptelor din domeniul Data Analysis.
+Repository dedicat învățării și aprofundării conceptelor din domeniul _Data Analysis_.
 
 ## Ce contine:
 - SQL
