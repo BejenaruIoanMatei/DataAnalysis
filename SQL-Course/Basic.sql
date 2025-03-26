@@ -1,0 +1,120 @@
+SELECT
+	TABLE_NAME
+FROM
+	INFORMATION_SCHEMA.TABLES
+WHERE
+	TABLE_SCHEMA = 'public';
+
+CREATE VIEW GRAMMY_WINNERS_VIEW AS
+SELECT
+	*
+FROM
+	GRAMMY_WINNERS
+LIMIT
+	100;
+
+SELECT
+	*
+FROM
+	GRAMMY_WINNERS
+LIMIT
+	5;
+
+-- SELECT 
+SELECT
+	SONG_OR_ALBUM
+FROM
+	GRAMMY_WINNERS
+WHERE
+	ARTIST = 'Beyoncé';
+
+-- WHERE
+SELECT
+	YEAR,
+	ARTIST
+FROM
+	GRAMMY_WINNERS
+WHERE
+	WINNER = 'true'
+	AND ARTIST = 'Beyoncé';
+
+-- AND/OR
+SELECT
+	ARTIST
+FROM
+	GRAMMY_WINNERS
+WHERE
+	YEAR < 2023
+	AND WINNER = 'false'
+	AND ARTIST IS NOT NULL;
+
+-- BETWEEN
+SELECT
+	YEAR,
+	ARTIST
+FROM
+	GRAMMY_WINNERS
+WHERE
+	YEAR BETWEEN 2000 AND 2010
+	AND WINNER = 'TRUE';
+
+-- SQL IN
+SELECT
+	YEAR,
+	ARTIST,
+	SONG_OR_ALBUM
+FROM
+	GRAMMY_WINNERS
+WHERE
+	ARTIST IN ('Beyoncé', 'Kendrick Lamar');
+
+-- SQL LIKE
+SELECT
+	YEAR,
+	CATEGORY
+FROM
+	GRAMMY_WINNERS
+WHERE
+	CATEGORY LIKE '%Dance%';
+
+-- WHERE first_name LIKE 'a%'	Finds any values that starts with "a"
+-- WHERE first_name LIKE '%a'	Finds any values that ends with "a"
+-- WHERE first_name LIKE '%ae%'	Finds any values that have "ae" in the middle
+-- WHERE first_name LIKE '_b%'	Finds any values with "b" in the second position
+-- WHERE first_name LIKE 'a%o'	Finds any values that starts with "a" and ends with "o"
+-- WHERE first_name LIKE 'a___'	Finds any value that starts with "a" and has 3 character
+-- FILTERING REVIEW
+SELECT
+	*
+FROM
+	GRAMMY_WINNERS
+WHERE
+	YEAR BETWEEN 1990 AND 2000
+	AND CATEGORY LIKE '%A%'
+	AND WINNER = TRUE;
+
+-- ORDER BY
+SELECT
+	*
+FROM
+	GRAMMY_WINNERS
+WHERE
+	ARTIST LIKE 'A%'
+	OR ARTIST LIKE 'B%'
+	AND YEAR > 2020
+ORDER BY
+	YEAR DESC;
+
+-- SELECT column1, column2
+-- FROM table_name
+-- WHERE condition(s)
+-- ORDER BY column;
+SELECT 
+	ARTIST, YEAR
+FROM 
+	GRAMMY_WINNERS
+WHERE 
+	WINNER = TRUE 
+ORDER BY 
+	YEAR ASC;
+	
